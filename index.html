@@ -8,17 +8,18 @@
 </head>
 <body>
 
-    <header class="hero">
-        <h1>Picture This!</h1>
-        <h2>My Really Cool Blog Post</h2>
-    </header>
+    <main class="page-layout">
 
-    <main>
-        <section class="black-section"></section>
+        <section class="text-side">
+            <div class="text-content">
+                <h1>Picture This!</h1>
+                <h2>My Really Cool Blog Post</h2>
+            </div>
+        </section>
 
-        <section class="image-section">
+        <section class="image-side">
             <picture>
-                <!-- Square image for screens 960px and wider -->
+                <!-- Square images: 960px and wider -->
                 <source
                     media="(min-width: 960px)"
                     srcset="
@@ -32,7 +33,7 @@
                     sizes="50vw"
                 >
 
-                <!-- Landscape image for screens below 960px -->
+                <!-- Landscape images: below 960px -->
                 <source
                     media="(max-width: 959px)"
                     srcset="
@@ -49,10 +50,11 @@
 
                 <img
                     src="images/landscape-480.jpg"
-                    alt="Interior of a museum gallery filled with paintings"
+                    alt="Interior of a museum gallery filled with framed paintings"
                 >
             </picture>
         </section>
+
     </main>
 
 </body>

@@ -13,33 +13,41 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.hero {
-    height: 330px;
-    background-color: #64a3a6;
-    color: #000;
-    text-align: center;
-    padding-top: 75px;
+/* Mobile first: content stacks vertically */
+.page-layout {
+    width: 100%;
 }
 
-.hero h1 {
+.text-side {
+    min-height: 330px;
+    background-color: #64a3a6;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.text-content {
+    padding: 30px;
+}
+
+.text-side h1 {
     margin: 0 0 30px;
     font-size: 72px;
     font-weight: 700;
 }
 
-.hero h2 {
+.text-side h2 {
     margin: 0;
     font-size: 28px;
     font-weight: 700;
 }
 
-.black-section {
-    height: 410px;
+/* Black space appears on smaller screens before the image */
+.image-side {
+    padding-top: 410px;
     background-color: #000;
-}
-
-.image-section {
-    width: 100%;
 }
 
 picture {
@@ -53,11 +61,32 @@ img {
     height: auto;
 }
 
-/* At 960px and above, use the square image */
+/* Desktop: exactly two halves, side by side */
 @media (min-width: 960px) {
+    .page-layout {
+        min-height: 100vh;
+        display: flex;
+    }
+
+    .text-side,
+    .image-side {
+        width: 50%;
+        min-height: 100vh;
+    }
+
+    .text-side {
+        padding: 0;
+    }
+
+    .image-side {
+        padding-top: 0;
+        display: flex;
+        align-items: center;
+        background-color: #000;
+    }
+
     picture {
-        width: 50vw;
-        margin: 0 auto;
+        width: 100%;
     }
 
     img {
@@ -67,23 +96,22 @@ img {
     }
 }
 
-/* Smaller screens */
+/* Adjust typography and spacing for smaller screens */
 @media (max-width: 959px) {
-    .hero {
-        height: 240px;
-        padding-top: 50px;
+    .text-side {
+        min-height: 240px;
     }
 
-    .hero h1 {
-        font-size: 48px;
+    .text-side h1 {
         margin-bottom: 20px;
+        font-size: 48px;
     }
 
-    .hero h2 {
+    .text-side h2 {
         font-size: 21px;
     }
 
-    .black-section {
-        height: 180px;
+    .image-side {
+        padding-top: 180px;
     }
 }
