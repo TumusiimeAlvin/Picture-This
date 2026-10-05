@@ -1,40 +1,89 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,700&display=swap');
+* {
+    box-sizing: border-box;
+}
 
 html,
 body {
-  margin: 0;
-  border: 0;
-  font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-.header {
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: center;
-  background-color: cadetblue;
+body {
+    background-color: #000;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.title {
-  padding: 50px 25px;
-  text-align: center;
+.hero {
+    height: 330px;
+    background-color: #64a3a6;
+    color: #000;
+    text-align: center;
+    padding-top: 75px;
 }
 
-h1 {
-  font-size: 3rem;
-  margin: 0;
+.hero h1 {
+    margin: 0 0 30px;
+    font-size: 72px;
+    font-weight: 700;
 }
 
-h4 {
-  font-size: 1.5rem;
-  font-weight: 300;
+.hero h2 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.black-section {
+    height: 410px;
+    background-color: #000;
+}
+
+.image-section {
+    width: 100%;
+}
+
+picture {
+    display: block;
+    width: 100%;
 }
 
 img {
-  display: block;
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
+/* At 960px and above, use the square image */
 @media (min-width: 960px) {
-  .header {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    picture {
+        width: 50vw;
+        margin: 0 auto;
+    }
+
+    img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+    }
+}
+
+/* Smaller screens */
+@media (max-width: 959px) {
+    .hero {
+        height: 240px;
+        padding-top: 50px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+
+    .hero h2 {
+        font-size: 21px;
+    }
+
+    .black-section {
+        height: 180px;
+    }
 }
